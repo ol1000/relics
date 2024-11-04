@@ -1,0 +1,31 @@
+# Configuration for NeOHmulePerfDataw Relic Flex integration to run a Python script
+---
+integrations:
+  - name: nri-flex
+     config:
+      name: OHmulePerfData
+      apis:
+        - event_type: OHmulePerfData
+          commands:
+            - run: |
+                python3 /etc/newrelic-infra/integrations.d/mule.py | jq -c '[.performance_data.applicationData[] | { app_Id: .appId, envId: .envId, envName: .envName, orgId: .orgId, orgName: .orgName, requestVolume: (.requestVolume | tonumber), responseTime: (.response>
+              split_by: "\n"
+      metrics:
+        - name: application_performance
+          type: gauge
+          labels:
+            app_Id: "{{.appId}}"
+            envId: "{{.envId}}"
+            envName: "{{.envName}}"
+            orgId: "{{.orgId}}"
+            orgName: "{{.orgName}}"
+          value: "{{.requestVolume}}"
+        - name: application_response_time
+          type: gauge
+          labels:
+            appId: "{{.appId}}"
+            envId: "{{.envId}}"
+            envName: "{{.envName}}"
+            orgId: "{{.orgId}}"
+            orgName: "{{.orgName}}"
+          value: "{{.responseTime}}"
