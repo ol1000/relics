@@ -2,7 +2,7 @@
 ---
 integrations:
   - name: nri-flex
-     config:
+    config:
       name: OHmulePerfData
       apis:
         - event_type: OHmulePerfData
@@ -14,7 +14,7 @@ integrations:
         - name: application_performance
           type: gauge
           labels:
-            app_Id: "{{.appId}}"
+            appId: "{{.appId}}"
             envId: "{{.envId}}"
             envName: "{{.envName}}"
             orgId: "{{.orgId}}"
