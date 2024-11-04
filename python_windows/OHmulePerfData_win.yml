@@ -6,7 +6,7 @@ integrations:
       apis:
         - event_type: OHmulePerfData
           commands:
-            - run: C:\Users\ol1000\AppData\Local\Programs\Python\Python313\python.exe C:\mule.py
+            - run: C:\Users\ol1000\AppData\Local\Programs\Python\Python313\python.exe C:\mule_win.py
               split_by: "\n"
       metrics:
         - name: application_performance
