@@ -1,12 +1,19 @@
 Setup instructions for windows Flex
 
-where python
 
-cd C:\Users\xxxxxx\AppData\Local\Programs\Python\Python312\
+From terminal...
 
-cd Scripts
+C:\Users\xxx>where python
+C:\Users\xxx\python
 
-pip3 install requests
+C:\Users\xxx\AppData\Local\Microsoft\WindowsApps\python.exe
+C:\Users\xxx\AppData\Local\Programs\Python\Python312\python.exe
+
+C:\Users\xxx>cd C:\Users\xxx\AppData\Local\Programs\Python\Python312\
+
+C:\Users\xxx\AppData\Local\Programs\Python\Python312>cd Scripts
+
+C:\Users\xxx\AppData\Local\Programs\Python\Python312\Scripts>pip3 install requests
 
 That should be all
 
